@@ -1,0 +1,103 @@
+.footer {
+  background-color: $gray;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  &__wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: $contentPadding/2;
+  }
+  &__content {
+    padding-top: $contentPadding/2;
+    padding-bottom: $contentPadding/2;
+  }
+
+  &__headingWrapper {
+    padding: $contentPadding/2;
+    display: flex;
+    align-items: center;
+  }
+  &__bulletPoint {
+    width: 3px;
+    height: 18px;
+    background-color: $primary;
+    margin-right: 6px;
+  }
+  &__item {
+    padding: $contentPadding/2;
+    &--highlight {
+      font-weight: bolder;
+    }
+  }
+  &__link {
+    color: $black;
+  }
+  &__link:hover {
+    color: $primary;
+    transition: 300ms;
+  }
+  &__contact {
+    display: flex;
+    font-size: 1.6em;
+    list-style: none;
+  }
+  &__icon {
+    color: $black;
+  }
+  &__newsletter {
+    margin: $contentPadding/2;
+    display: flex;
+    width: fit-content;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  &__input {
+    padding: $contentPadding/3;
+    border: none;
+  }
+  &__btn {
+    border: none;
+    background-color: $secondary-lite;
+    color: $white;
+    padding: $contentPadding/4;
+    display: flex;
+    align-items: center;
+    &--icon {
+      font-size: 1.4rem;
+    }
+  }
+  &__btn:hover {
+    background-color: $secondary;
+    cursor: pointer;
+    transition: 300ms;
+  }
+
+  &__bottom {
+    background-color: $primary;
+    color: $white;
+    padding: $contentPadding;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .footer {
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    &__content {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .footer {
+    &__content {
+      width: 25%;
+    }
+  }
+}
