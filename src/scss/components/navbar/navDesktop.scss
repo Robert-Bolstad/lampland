@@ -1,0 +1,54 @@
+.navDesktop {
+  height: 80px;
+  display: flex;
+  padding: $contentPadding;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__logo {
+    font-size: 1.6rem;
+    color: $white;
+    display: flex;
+    align-content: center;
+    &--highlight {
+      color: $primary-dark;
+    }
+    &--img {
+      width: 1.4rem;
+      margin-right: 6px;
+    }
+  }
+
+  &__cart {
+    font-size: 1.6rem;
+    color: $secondary-lite;
+    display: flex;
+    align-items: center;
+    &--text {
+      font-size: 16px;
+      padding-left: 8px;
+      color: $white;
+    }
+    &--text:hover {
+      color: $secondary;
+      transition: 300ms;
+    }
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    padding: $contentPadding;
+  }
+  &__link {
+    color: $white;
+    font-size: 16px;
+  }
+  &__link:hover {
+    color: $secondary;
+    transition: 300ms;
+  }
+}
