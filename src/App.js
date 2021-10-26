@@ -15,6 +15,7 @@ import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/details" component={ProductDetails}></Route>
             <Route path="*" component={PageNotFound}></Route>
           </Switch>
+          <Footer />
         </div>
       </div>
     </Router>
