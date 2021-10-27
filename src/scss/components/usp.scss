@@ -1,0 +1,29 @@
+.usp {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $contentPadding/2;
+  display: flex;
+  background-color: $primary;
+  color: $white;
+  overflow-x: auto;
+  justify-content: space-between;
+
+  &__item {
+    padding: $contentPadding/2;
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    font-size: 2.3rem;
+    margin-right: 10px;
+    color: $secondary-lite;
+  }
+  &__headline {
+    display: block;
+    white-space: nowrap;
+  }
+  &__subheadline {
+    font-size: 0.8rem;
+  }
+}
