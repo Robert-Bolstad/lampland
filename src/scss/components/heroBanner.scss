@@ -28,6 +28,7 @@
     width: max-content;
     font-size: 1em;
     margin: $contentPadding/2;
+    border-radius: 5px;
   }
   &__btn:hover {
     background-color: $primary-dark;
