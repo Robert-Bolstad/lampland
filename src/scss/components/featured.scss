@@ -1,0 +1,76 @@
+.featured {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  &__heading {
+    padding: $contentPadding/2;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__card {
+    padding: $contentPadding/2;
+  }
+  &__img {
+    padding: $contentPadding/2;
+    height: 200px; /* height of container */
+    object-fit: cover;
+  }
+  &__productName {
+    padding: $contentPadding/2;
+    letter-spacing: 1px;
+    color: $primary;
+  }
+  &__productName:hover {
+    color: $primary-dark;
+    transition: 300ms;
+  }
+  &__description {
+    padding: $contentPadding/2;
+  }
+  &__link {
+    padding: $contentPadding;
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    color: $white;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $contentPadding * 3;
+    margin-top: $contentPadding * 2;
+  }
+  &__link:hover {
+    background-color: $primary-dark;
+    transition: 300ms;
+  }
+  &__icon {
+    margin-right: 8px;
+    margin-left: 6px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .featured {
+    &__card {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .featured {
+    &__card {
+      width: 25%;
+    }
+  }
+}
