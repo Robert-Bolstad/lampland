@@ -1,0 +1,84 @@
+.filter {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $contentPadding;
+    padding-bottom: 0px;
+  }
+  &__heading {
+    font-size: 2em;
+  }
+  &__btn {
+    border: none;
+    background-color: transparent;
+  }
+  &__searchIcon {
+    font-size: 2em;
+    color: $primary;
+    &:hover {
+      color: $primary-dark;
+      transition: 300ms;
+      cursor: pointer;
+    }
+  }
+  &__options {
+    display: none;
+    &--active {
+      display: block;
+    }
+  }
+
+  &__search {
+    margin: $contentPadding;
+    margin-bottom: $contentPadding/2;
+  }
+  &__searchInput {
+    padding: $contentPadding/2;
+    width: 100%;
+    box-shadow: $bordershadow;
+    border-radius: 5px;
+    border: 1px solid $primary;
+  }
+  &__category {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: $contentPadding/2;
+  }
+  &__checkbox {
+    display: none;
+  }
+  &__checkBtn {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    border: 1px solid $primary;
+    padding: 2px;
+    box-shadow: $bordershadow;
+    margin-right: 8px;
+  }
+  &__checkIcon {
+    color: transparent;
+    font-size: 1rem;
+    &--active {
+      color: $primary;
+    }
+  }
+  &__name {
+    &--highlight {
+      color: $primary;
+      font-weight: bolder;
+    }
+  }
+  &__price {
+    padding: $contentPadding/2;
+    margin: $contentPadding/2;
+    box-shadow: $bordershadow;
+    border-radius: 5px;
+    border: 1px solid $primary;
+  }
+}
