@@ -12,5 +12,9 @@
 @import "components/featured.scss";
 @import "components/card.scss";
 @import "components/filter.scss";
+@import "components/modal.scss";
 
 //pagestyles
+
+@import "pages/details_page/ProductDisplay.scss";
+@import "pages/details_page/detail.scss";

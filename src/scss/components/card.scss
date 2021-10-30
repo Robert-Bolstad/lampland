@@ -11,14 +11,21 @@
     height: 200px;
     object-fit: cover;
   }
-  &__headline {
+  &__headingWrapper {
+    display: flex;
+    justify-content: space-between;
     padding: $contentPadding/2;
-    letter-spacing: 1px;
-    color: $primary;
   }
-  &__heading:hover {
-    color: $primary-dark;
-    transition: 300ms;
+  &__headline {
+    letter-spacing: 1px;
+    color: $secondary;
+  }
+
+  &__price {
+    color: $white;
+    border: 1px solid $gray;
+    padding: 4px;
+    background-color: $primary;
   }
   &__description {
     padding: $contentPadding/2;

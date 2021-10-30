@@ -1,0 +1,100 @@
+.modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+
+  &--active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  &__container {
+    text-align: center;
+    box-shadow: $bordershadow;
+    margin: $contentPadding;
+    padding: $contentPadding/2;
+    border-radius: 5px;
+    background-color: $white;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__top {
+    padding: $contentPadding/2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &--icon {
+      font-size: 1.6rem;
+      color: $black-lite;
+    }
+  }
+  &__icon {
+    font-size: 2rem;
+    color: $secondary;
+    margin-left: $contentPadding;
+  }
+  &__name {
+    padding: $contentPadding/2;
+  }
+  &__img {
+    height: 150px;
+    object-fit: contain;
+    padding: $contentPadding/2;
+  }
+  &__quantity {
+    padding: $contentPadding/2;
+    &--name {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+  }
+  &__price {
+    padding: $contentPadding/2;
+    font-weight: bolder;
+    &--price {
+      color: $secondary;
+    }
+  }
+  &__links {
+    padding: $contentPadding/2;
+    display: flex;
+    justify-content: center;
+  }
+  &__link {
+    padding: $contentPadding/2;
+    color: $white;
+    border: none;
+    box-shadow: $bordershadow;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: block;
+    width: fit-content;
+    &--shop {
+      margin-right: $contentPadding;
+      background-color: $primary;
+      &:hover {
+        background-color: $primary-dark;
+      }
+    }
+    &--cart {
+      background-color: $secondary-lite;
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+  }
+}
