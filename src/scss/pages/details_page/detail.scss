@@ -32,33 +32,7 @@
     justify-content: space-between;
     align-items: center;
   }
-  &__quantity {
-    display: flex;
-    align-items: center;
-  }
-  &__number {
-    padding: 8px;
-    font-size: 1.2rem;
-  }
-  &__input {
-    display: none;
-  }
-  &__icon {
-    font-size: 2rem;
-    color: $primary;
-    &:hover {
-      color: $primary-dark;
-      cursor: pointer;
-    }
-  }
-  &__increment {
-    border: none;
-    background-color: transparent;
-  }
-  &__decrement {
-    border: none;
-    background-color: transparent;
-  }
+
   &__cart {
     padding: $contentPadding/2;
 
