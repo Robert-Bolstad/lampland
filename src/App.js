@@ -31,7 +31,7 @@ function App() {
             <Route path="/add" component={AddProducts}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/products" component={Products}></Route>
-            <Route path="/details" component={ProductDetails}></Route>
+            <Route path="/details/:id" component={ProductDetails}></Route>
             <Route path="*" component={PageNotFound}></Route>
           </Switch>
           <Footer />
