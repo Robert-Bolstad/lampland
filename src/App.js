@@ -1,10 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import EditProducts from "./pages/EditProducts";
@@ -16,28 +10,31 @@ import ProductDetails from "./pages/ProductDetails";
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/Footer";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <div className="content">
-          <Navbar />
-          <Switch>
-            <Route path="/" exact component={Home}></Route>
-            <Route path="/cart" component={Cart}></Route>
-            <Route path="/edit" component={EditProducts}></Route>
-            <Route path="/favorites" component={Favorites}></Route>
-            <Route path="/add" component={AddProducts}></Route>
-            <Route path="/login" component={Login}></Route>
-            <Route path="/products" component={Products}></Route>
-            <Route path="/details/:id" component={ProductDetails}></Route>
-            <Route path="*" component={PageNotFound}></Route>
-          </Switch>
-          <Footer />
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <div className="content">
+            <Navbar />
+            <Switch>
+              <Route path="/" exact component={Home}></Route>
+              <Route path="/cart" component={Cart}></Route>
+              <Route path="/edit" component={EditProducts}></Route>
+              <Route path="/favorites" component={Favorites}></Route>
+              <Route path="/add" component={AddProducts}></Route>
+              <Route path="/login" component={Login}></Route>
+              <Route path="/products" component={Products}></Route>
+              <Route path="/details/:id" component={ProductDetails}></Route>
+              <Route path="*" component={PageNotFound}></Route>
+            </Switch>
+            <Footer />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 
