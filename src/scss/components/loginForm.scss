@@ -1,0 +1,41 @@
+.loginForm {
+  &__fieldset {
+    border: 0px;
+  }
+  &__wrapper {
+    padding: $contentPadding/2;
+  }
+  &__group {
+    display: flex;
+    align-items: stretch;
+  }
+  &__icon {
+    background-color: $primary;
+    padding: $contentPadding/2;
+    color: $white;
+    font-size: 1.6rem;
+    width: max-content;
+    height: auto;
+  }
+
+  &__input {
+    padding: $contentPadding;
+    border: 0px;
+    width: 100%;
+  }
+  &__btn {
+    padding: $contentPadding/2;
+    color: $white;
+    background-color: $secondary;
+    border: 0px;
+
+    margin: $contentPadding/2;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    &:hover {
+      background-color: $secondary-lite;
+      transition: 300ms;
+    }
+  }
+}
