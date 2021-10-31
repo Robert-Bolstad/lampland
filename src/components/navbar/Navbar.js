@@ -1,10 +1,13 @@
 import logo from "../../img/logo.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import NavMobile from "./mobile/NavMobile";
 import NavDesktop from "./desktop/NavDesktop";
+import AuthContext from "../../context/AuthContext";
 
 const Navbar = () => {
   const [size, setSize] = useState(window.innerWidth);
+  const auth = useContext(AuthContext);
+  const role = auth[0].user.role.name;
 
   const checkSize = () => {
     setSize(window.innerWidth);
@@ -20,7 +23,11 @@ const Navbar = () => {
 
   return (
     <header>
-      {size < 1000 ? <NavMobile logo={logo} /> : <NavDesktop logo={logo} />}
+      {size < 1000 ? (
+        <NavMobile logo={logo} role={role} />
+      ) : (
+        <NavDesktop logo={logo} role={role} />
+      )}
     </header>
   );
 };
