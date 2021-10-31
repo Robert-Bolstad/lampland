@@ -1,0 +1,12 @@
+.notFound {
+  text-align: center;
+  margin-top: $contentPadding * 4;
+  margin-bottom: $contentPadding * 4;
+
+  &__logo {
+    width: 50px;
+  }
+  &__heading {
+    padding: $contentPadding;
+  }
+}
