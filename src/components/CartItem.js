@@ -9,7 +9,7 @@ const CartItem = ({ id, cartId, img, name, price, quantity, setItems }) => {
 
   const removeProduct = () => {
     const filtered = products.filter((product) => {
-      if (product.cartId != cartId) {
+      if (product.cartId !== cartId) {
         return true;
       }
     });
