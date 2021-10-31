@@ -31,7 +31,7 @@ const LoginForm = () => {
     try {
       const response = await axios.post(`${authUrl}`, data);
       setAuth(response.data);
-      history.push("/admin");
+      history.push("/products");
     } catch (error) {
       console.log("error", error);
       setLoginError(error.toString());
