@@ -1,7 +1,6 @@
 import Card from "../components/Card";
 import { apiUrl } from "../utils/api";
 import { useState, useEffect, useRef } from "react";
-import { FaFilter } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { BsCheckLg } from "react-icons/bs";
 function Products() {
