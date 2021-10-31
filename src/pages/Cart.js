@@ -1,19 +1,11 @@
 import CartItem from "../components/CartItem";
 import { retrieveFromStorage } from "../utils/localStorage";
 import { useState, useEffect } from "react";
+import Checkout from "../components/Checkout";
+import EmptyCart from "../components/EmptyCart";
 
 const Cart = () => {
   const [items, setItems] = useState(retrieveFromStorage("cart"));
-
-  const calculateSubtotal = () => {
-    let sum = 0;
-
-    items.forEach((item) => {
-      const each = item.price * item.quantity;
-      sum += each;
-    });
-    return sum.toFixed(2);
-  };
 
   useEffect(() => {}, [items]);
 
@@ -36,13 +28,10 @@ const Cart = () => {
               />
             );
           })}
-          <div>
-            <h3>Subtotal</h3>
-            <span>{calculateSubtotal()}</span>
-          </div>
+          <Checkout items={items} />
         </div>
       ) : (
-        <div>Empty cart</div>
+        <EmptyCart />
       )}
     </section>
   );
