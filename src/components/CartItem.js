@@ -36,22 +36,30 @@ const CartItem = ({ id, cartId, img, name, price, quantity, setItems }) => {
 
   return (
     <div className="cartItem">
-      <img src={img} alt={name} />
-      <Link to={"details/" + id}>{name}</Link>
-      <p>
-        Total <span>{calcTotalPrice()} $</span>
-      </p>
-      <IncrementDecrement
-        quantity={quantityState}
-        setQuantity={setQuantityState}
-      />
-      <button
-        onClick={() => {
-          removeProduct();
-        }}
-      >
-        Remove
-      </button>
+      <img className="cartItem__img" src={img} alt={name} />
+
+      <div className="cartItem__wrapper">
+        <Link className="cartItem__name" to={"details/" + id}>
+          {name}
+        </Link>
+        <p className="cartItem__price">
+          <span>{calcTotalPrice()} $</span>
+        </p>
+        <button
+          className="cartItem__remove"
+          onClick={() => {
+            removeProduct();
+          }}
+        >
+          Remove
+        </button>
+      </div>
+      <div className="cartItem__increment">
+        <IncrementDecrement
+          quantity={quantityState}
+          setQuantity={setQuantityState}
+        />
+      </div>
     </div>
   );
 };
