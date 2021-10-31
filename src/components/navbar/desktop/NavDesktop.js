@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+
 import * as FaIcons from "react-icons/fa";
 
 const NavDesktop = ({ logo }) => {
