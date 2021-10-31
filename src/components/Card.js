@@ -7,11 +7,7 @@ const Card = ({ products }) => {
         return (
           <div className="card__container" key={product.id}>
             <Link to={`/details/${product.id}`}>
-              <img
-                className="card__img"
-                src={product.image_url}
-                alt="Image of a lamp"
-              />
+              <img className="card__img" src={product.image_url} alt="lamp" />
             </Link>
             <div className="card__headingWrapper">
               <Link to={`/details/${product.id}`}>
