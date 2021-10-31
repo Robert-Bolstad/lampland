@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-
+import { useContext } from "react";
 import * as FaIcons from "react-icons/fa";
+import AuthContext from "../../../context/AuthContext";
 
-const NavDesktop = ({ logo }) => {
+const NavDesktop = ({ logo, role }) => {
   return (
     <div className="navDesktop">
       <Link to="/">
@@ -23,11 +24,24 @@ const NavDesktop = ({ logo }) => {
               Products
             </Link>
           </li>
-          <li className="navDesktop__item">
-            <Link className="navDesktop__link" to="/login">
-              Login
-            </Link>
-          </li>
+          {role === "Authenticated" ? (
+            <li className="navDesktop__item">
+              <Link className="navDesktop__link" to="/add">
+                AddProducts
+              </Link>
+            </li>
+          ) : null}
+          {role === "Authenticated" || "Public" ? (
+            <li className="navDesktop__item">
+              <button className="navDesktop__link">Logout</button>
+            </li>
+          ) : (
+            <li className="navDesktop__item">
+              <Link className="navDesktop__link" to="/login">
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
       <Link to="/cart" className="navDesktop__cart">

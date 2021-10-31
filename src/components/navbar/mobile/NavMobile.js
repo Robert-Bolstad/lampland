@@ -2,11 +2,32 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
-import { sidebarData } from "../mobile/SidebarData";
 
-const NavMobile = ({ logo }) => {
+import {
+  sidebarData,
+  sidebarDataUser,
+  sidebarDataAdmin,
+} from "../mobile/SidebarData";
+
+const NavMobile = ({ logo, role }) => {
   const [sidebar, setSidebar] = useState(false);
+  const [userType, SetUserType] = useState(sidebarData);
   const handleSidebar = () => setSidebar(!sidebar);
+
+  useEffect(() => {
+    switch (role) {
+      case "Authenticated":
+        SetUserType(sidebarDataAdmin);
+        break;
+      case "Public":
+        SetUserType(sidebarDataUser);
+        break;
+
+      default:
+        SetUserType(sidebarData);
+        break;
+    }
+  }, []);
   return (
     <>
       <div className="navMobile">
@@ -36,7 +57,7 @@ const NavMobile = ({ logo }) => {
               <AiIcons.AiOutlineClose onClick={handleSidebar} />
             </Link>
           </li>
-          {sidebarData.map((item) => {
+          {userType.map((item) => {
             return (
               <li key={item.id} className="navMobile__item">
                 <Link to={item.path} onClick={handleSidebar}>
