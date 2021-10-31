@@ -1,5 +1,7 @@
 .footer {
   background-color: $gray;
+  position: sticky;
+  top: 100%;
 
   &__wrapper {
     max-width: 1200px;

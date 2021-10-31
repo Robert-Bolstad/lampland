@@ -1,2 +1,47 @@
 .cartItem {
+  display: flex;
+  align-items: center;
+  margin: $contentPadding;
+  margin-top: 0px;
+  box-shadow: $bordershadow;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__img {
+    height: 129px;
+    object-fit: cover;
+    width: 100px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 109px;
+    padding: $contentPadding/2;
+    padding-left: $contentPadding;
+  }
+  &__name {
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+  &__price {
+    font-weight: bolder;
+  }
+  &__increment {
+    padding: $contentPadding/2;
+    margin-left: auto;
+  }
+  &__remove {
+    border: none;
+    color: $red;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    width: fit-content;
+    cursor: pointer;
+  }
+}
+.cartItem .incrementDecrement {
+  flex-direction: column;
 }
