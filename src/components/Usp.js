@@ -1,4 +1,4 @@
-import { GiReceiveMoney, GiBackwardTime } from "react-icons/gi";
+import { GiBackwardTime } from "react-icons/gi";
 import { BiPackage } from "react-icons/bi";
 import { MdMoneyOff } from "react-icons/md";
 import { AiOutlineSafety } from "react-icons/ai";
