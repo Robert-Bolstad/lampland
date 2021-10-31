@@ -29,6 +29,66 @@ export const sidebarData = [
     icon: <IoIcons.IoLogInSharp />,
     id: 4,
   },
+];
+
+export const sidebarDataUser = [
+  {
+    title: "Home",
+    path: "/",
+    icon: <AiIcons.AiFillHome />,
+    id: 1,
+  },
+  {
+    title: "Products",
+    path: "/products",
+    icon: <BsIcons.BsLampFill />,
+    id: 2,
+  },
+  {
+    title: "Cart",
+    path: "/cart",
+    icon: <FaIcons.FaShoppingCart />,
+    id: 3,
+  },
+  {
+    title: "Login",
+    path: "/login",
+    icon: <IoIcons.IoLogInSharp />,
+    id: 4,
+  },
+  {
+    title: "Favorites",
+    path: "/favorites",
+    icon: <MdIcons.MdFavorite />,
+    id: 5,
+  },
+];
+
+export const sidebarDataAdmin = [
+  {
+    title: "Home",
+    path: "/",
+    icon: <AiIcons.AiFillHome />,
+    id: 1,
+  },
+  {
+    title: "Products",
+    path: "/products",
+    icon: <BsIcons.BsLampFill />,
+    id: 2,
+  },
+  {
+    title: "Cart",
+    path: "/cart",
+    icon: <FaIcons.FaShoppingCart />,
+    id: 3,
+  },
+  {
+    title: "Login",
+    path: "/login",
+    icon: <IoIcons.IoLogInSharp />,
+    id: 4,
+  },
   {
     title: "Favorites",
     path: "/favorites",
