@@ -30,6 +30,28 @@
   &__description {
     padding: $contentPadding/2;
   }
+  &__admin {
+    padding: $contentPadding/2;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__edit {
+    color: $secondary;
+    font-weight: bolder;
+    font-size: 1rem;
+    &:hover {
+      color: $secondary-lite;
+      transition: 300ms;
+    }
+  }
+  &__delete {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0px;
+    color: $red;
+    font-weight: bolder;
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 500px) {
