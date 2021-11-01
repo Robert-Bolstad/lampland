@@ -7,7 +7,14 @@ import AuthContext from "../../context/AuthContext";
 const Navbar = () => {
   const [size, setSize] = useState(window.innerWidth);
   const auth = useContext(AuthContext);
-  const role = auth[0].user.role.name;
+
+  const checkAuth = () => {
+    if (auth[0] === null) {
+      return "noneUser";
+    } else {
+      return auth[0].user.role.name;
+    }
+  };
 
   const checkSize = () => {
     setSize(window.innerWidth);
@@ -24,9 +31,9 @@ const Navbar = () => {
   return (
     <header>
       {size < 1000 ? (
-        <NavMobile logo={logo} role={role} />
+        <NavMobile logo={logo} role={checkAuth()} />
       ) : (
-        <NavDesktop logo={logo} role={role} />
+        <NavDesktop logo={logo} role={checkAuth()} />
       )}
     </header>
   );
