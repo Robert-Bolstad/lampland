@@ -11,27 +11,59 @@ import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/Footer";
 import { AuthProvider } from "./context/AuthContext";
+import { apiUrl } from "./utils/api";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [data, setData] = useState();
+
+  const getData = async () => {
+    try {
+      const data = await axios.get(`${apiUrl}products`);
+      setData(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <AuthProvider>
       <Router>
         <div className="App">
-          <div className="content">
-            <Navbar />
-            <Switch>
-              <Route path="/" exact component={Home}></Route>
-              <Route path="/cart" component={Cart}></Route>
-              <Route path="/edit/:id" component={EditProducts}></Route>
-              <Route path="/favorites" component={Favorites}></Route>
-              <Route path="/add" component={AddProducts}></Route>
-              <Route path="/login" component={Login}></Route>
-              <Route path="/products" component={Products}></Route>
-              <Route path="/details/:id" component={ProductDetails}></Route>
-              <Route path="*" component={PageNotFound}></Route>
-            </Switch>
-            <Footer />
-          </div>
+          {data ? (
+            <div className="content">
+              <Navbar />
+              <Switch>
+                <Route exact path="/" render={() => <Home data={data} />} />
+                <Route exact path="/cart" component={Cart}></Route>
+                <Route
+                  exact
+                  path="/edit/:id"
+                  render={() => <EditProducts data={data} />}
+                />
+                <Route exact path="/favorites" component={Favorites} />
+                <Route exact path="/add" component={AddProducts}></Route>
+                <Route exact path="/login" component={Login}></Route>
+                <Route
+                  exact
+                  path="/products"
+                  render={() => <Products data={data} />}
+                />
+                <Route
+                  exact
+                  path="/details/:id"
+                  component={ProductDetails}
+                ></Route>
+                <Route exact path="*" component={PageNotFound}></Route>
+              </Switch>
+              <Footer />
+            </div>
+          ) : null}
         </div>
       </Router>
     </AuthProvider>
