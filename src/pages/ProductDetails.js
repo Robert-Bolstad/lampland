@@ -5,6 +5,7 @@ import IncrementDecrement from "../components/IncrementDecrement";
 import { FaShoppingCart } from "react-icons/fa";
 import { saveToStorage, retrieveFromStorage } from "../utils/localStorage";
 import Modal from "../components/Modal";
+import { withRouter } from "react-router-dom";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState([]);
@@ -80,4 +81,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default withRouter(ProductDetails);
