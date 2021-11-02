@@ -1,15 +1,16 @@
 import HeroBanner from "../components/HeroBanner";
 import Usp from "../components/Usp";
 import Featured from "../components/Featured";
+import { withRouter } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <>
       <HeroBanner />
       <Usp />
-      <Featured />
+      <Featured data={data} />
     </>
   );
 };
 
-export default Home;
+export default withRouter(Home);
