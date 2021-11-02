@@ -1,22 +1,11 @@
 import Card from "../components/Card";
-import { apiUrl } from "../utils/api";
-import { useState, useEffect, useRef } from "react";
+import { withRouter } from "react-router-dom";
 
+import { useState, useEffect } from "react";
 import Filter from "../components/Filter";
-function Products() {
-  const [rawData, setRawdata] = useState([]);
+function Products({ data }) {
+  const [rawData, setRawdata] = useState(data);
   const [products, setProducts] = useState([]);
-
-  const getUsers = async () => {
-    const response = await fetch(apiUrl + "products");
-    const products = await response.json();
-    setRawdata(products);
-    setProducts(products);
-  };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
 
   useEffect(() => {}, [products]);
 
@@ -31,4 +20,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default withRouter(Products);
