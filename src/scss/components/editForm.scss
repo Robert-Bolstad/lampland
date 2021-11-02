@@ -1,0 +1,92 @@
+.editForm {
+  &__fieldset {
+    border: 0px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__section {
+    padding: $contentPadding/2;
+  }
+  &__group {
+    &--checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: $contentPadding;
+      padding-bottom: $contentPadding;
+    }
+  }
+  &__imgContainer {
+    height: 300px;
+    display: flex;
+    background-color: $white;
+    border-radius: $bordershadow;
+  }
+  &__img {
+    object-fit: contain;
+    background-color: $gray;
+  }
+  &__input {
+    width: 100%;
+    padding: $contentPadding/4;
+    &--textarea {
+      resize: none;
+      height: 100px;
+    }
+  }
+  &__category {
+    padding-top: $contentPadding;
+    padding-bottom: 3px;
+    font-weight: bolder;
+    display: block;
+    &--checkbox {
+      padding: 0px;
+    }
+  }
+  &__checkbox {
+    padding: $contentPadding/6;
+    font-size: 2rem;
+    border: 2px solid $primary;
+    display: flex;
+    border-radius: 5px;
+    color: $white;
+    font-size: 1rem;
+    cursor: pointer;
+    &--active {
+      background-color: $primary;
+    }
+  }
+  &__checkboxInput {
+    display: none;
+  }
+  &__btn {
+    padding: $contentPadding/2;
+    font-size: 1rem;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: $bordershadow;
+    color: $white;
+    background-color: $primary;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary-dark;
+      transition: 300ms;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .editForm {
+    &__fieldset {
+      display: flex;
+    }
+
+    &__section {
+      width: 50%;
+    }
+    &__img {
+      margin-top: $contentPadding;
+    }
+  }
+}
